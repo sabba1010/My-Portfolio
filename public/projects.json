@@ -1,0 +1,39 @@
+[
+  
+  {
+    "id": "1",
+    "name": "Event Booking Web App",
+    "image": "https://i.ibb.co/rfQJgGRP/Screenshot-2025-06-28-175259.png",
+    "stack": ["React", "Firebase", "DaisyUI", "React Router"],
+    "description": "A user-friendly event booking app with authentication, event search, and user dashboard functionalities.",
+    "liveLink": "https://harmonious-gaufre-7b6922.netlify.app/",
+    "clientRepo": "https://github.com/sabba1010/Event-Booking?tab=readme-ov-file",
+    "serverRepo": "",
+    "challenges": "Implementing secure authentication and managing user-specific event bookings.",
+    "improvements": "Integrate payment gateways and add event reminders."
+  },
+  {
+    "id": "2",
+    "name": "Plant Care Tracker",
+    "image": "https://i.ibb.co/HQbFsqj/Screenshot-2025-06-28-153926.png",
+    "stack": ["React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
+    "description": "A full-stack responsive web app to track and manage your plants with personalized dashboards and reminders.",
+    "liveLink": "https://luxury-basbousa-865af8.netlify.app/",
+    "clientRepo": "https://github.com/sabba1010/Tree-Plant-Client",
+    "serverRepo": "https://github.com/sabba1010/Tre-Plants-Bd-Server",
+    "challenges": "Managing real-time updates and building an intuitive UI for plant tracking.",
+    "improvements": "Adding mobile apps and AI-powered care suggestions."
+  },
+  {
+    "id": "3",
+    "name": "Marathon Management System",
+    "image": "https://i.ibb.co/fYPr7SXv/Screenshot-2025-06-28-174732.png",
+    "stack": ["React", "MongoDB", "JWT", "Node.js", "TailwindCSS"],
+    "description": "A system for managing marathon registrations, countdown timers, and admin CRUD operations.",
+    "liveLink": "https://transcendent-croquembouche-dcb042.netlify.app/",
+    "clientRepo": "https://github.com/sabba1010/Marathon-Project",
+    
+    "challenges": "Handling JWT securely and creating dynamic countdown timers.",
+    "improvements": "Add payment integration and real-time registration analytics."
+  }
+]
