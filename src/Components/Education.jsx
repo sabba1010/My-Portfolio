@@ -2,22 +2,35 @@ import React from "react";
 
 const Education = () => {
   return (
-    <section id="education" className="max-w-4xl mx-auto px-4 py-12">
-      <h2 className="text-3xl font-bold mb-8 text-primary">Educational Qualification</h2>
+    <section
+      id="education"
+      className="max-w-4xl mx-auto px-6 py-16 bg-white dark:bg-gray-900 rounded-2xl shadow-lg transition-colors duration-300"
+    >
+      <h2 className="text-4xl font-extrabold mb-12 text-center text-primary">
+        Educational Qualification
+      </h2>
 
-      <div className="space-y-6">
+      <div className="space-y-8">
         {/* Current Education */}
-        <div>
-          <h3 className="text-xl font-semibold">Diploma in Computer Science & Technology (CST)</h3>
-          <p className="text-gray-700 dark:text-gray-300">Daffodil Polytechnic Institute</p>
-          <p className="text-sm mt-1">Currently Running</p>
+        <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <h3 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
+            Diploma in Computer Science & Technology (CST)
+          </h3>
+          <p className="text-lg font-medium text-orange-600 dark:text-orange-400">
+            Daffodil Polytechnic Institute
+          </p>
+          <p className="mt-1 text-gray-600 dark:text-gray-400 italic">Currently Running</p>
         </div>
 
-        {/* Example for Past Education (add if you want) */}
-        {/* <div>
-          <h3 className="text-xl font-semibold">Higher Secondary Certificate (HSC)</h3>
-          <p className="text-gray-700 dark:text-gray-300">Your College Name</p>
-          <p className="text-sm mt-1">Year Completed: 2021</p>
+        {/* Example Past Education (Optional) */}
+        {/* <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <h3 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
+            Higher Secondary Certificate (HSC)
+          </h3>
+          <p className="text-lg font-medium text-orange-600 dark:text-orange-400">
+            Some College Name
+          </p>
+          <p className="mt-1 text-gray-600 dark:text-gray-400 italic">2019 - 2021</p>
         </div> */}
       </div>
     </section>
@@ -25,3 +38,4 @@ const Education = () => {
 };
 
 export default Education;
+

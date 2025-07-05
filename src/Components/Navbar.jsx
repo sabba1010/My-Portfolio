@@ -25,10 +25,10 @@ const Navbar = () => {
           <a href="https://github.com/sabba1010" target="_blank" rel="noreferrer">
             <FaGithub className="text-xl hover:text-primary" />
           </a>
-          <a href="https://linkedin.com/in/your-link" target="_blank" rel="noreferrer">
+          <a href="https://www.linkedin.com/in/sabba1010/" target="_blank" rel="noreferrer">
             <FaLinkedin className="text-xl hover:text-primary" />
           </a>
-          <a href="https://facebook.com/your-link" target="_blank" rel="noreferrer">
+          <a href="https://www.facebook.com/sabba.hossain.niloy/" target="_blank" rel="noreferrer">
             <FaFacebook className="text-xl hover:text-primary" />
           </a>
           <a href="https://twitter.com/your-link" target="_blank" rel="noreferrer">

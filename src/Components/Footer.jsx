@@ -27,7 +27,7 @@ const Footer = () => {
             <FaGithub size={24} />
           </a>
           <a
-            href="https://linkedin.com/in/your-link"
+            href="https://www.linkedin.com/in/sabba1010/"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
@@ -36,7 +36,7 @@ const Footer = () => {
             <FaLinkedin size={24} />
           </a>
           <a
-            href="https://facebook.com/your-link"
+            href="https://www.facebook.com/sabba.hossain.niloy/"
             target="_blank"
             rel="noreferrer"
             aria-label="Facebook"

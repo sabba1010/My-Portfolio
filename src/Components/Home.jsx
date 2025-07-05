@@ -7,13 +7,12 @@ import About from './About';
 
 const Home = () => {
     return (
-        <div>
-            
-           <About/>
-           <Skills/>
-           <Education/>
-           <Projects/>
-             <Contact />
+        <div className="space-y-24"> {/* Fixed vertical gap between sections */}
+            <About />
+            <Skills />
+            <Education />
+            <Projects />
+            <Contact />
         </div>
     );
 };
