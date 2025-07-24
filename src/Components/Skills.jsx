@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaReact,
   FaHtml5,
@@ -36,7 +36,7 @@ const skillsData = {
     {
       name: "Git & GitHub",
       level: 75,
-      icon: <FaGithub className="text-gray-900 dark:text-gray-200" />,
+      icon: <FaGithub className="text-gray-200" />,
     },
     {
       name: "VS Code",
@@ -52,36 +52,45 @@ const skillsData = {
   ],
 };
 
-const SkillBar = ({ skill }) => (
-  <div className="mb-5">
-    <div className="flex justify-between items-center mb-1 text-sm font-semibold text-gray-800 dark:text-gray-200 drop-shadow-sm">
-      <span className="flex items-center gap-2">
-        <span className="text-xl">{skill.icon}</span>
-        {skill.name}
-      </span>
-      <span className="font-mono text-xs tracking-wide">{skill.level}%</span>
+const SkillBar = ({ skill, isHovered }) => {
+  return (
+    <div className="mb-6">
+      <div className="flex justify-between items-center mb-1 text-sm font-semibold text-white drop-shadow-sm">
+        <span className="flex items-center gap-2">
+          <span className="text-xl">{skill.icon}</span>
+          {skill.name}
+        </span>
+        <span className="font-mono text-xs tracking-wide">{skill.level}%</span>
+      </div>
+      <div className="w-full bg-gray-700 rounded-full h-5 overflow-hidden shadow-inner">
+        <motion.div
+          className="h-5 rounded-full bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600"
+          style={{ width: `${skill.level}%` }}
+          initial={{ width: 0, boxShadow: "0 0 12px rgb(236,72,153)" }}
+          animate={{
+            width: `${skill.level}%`,
+            boxShadow: isHovered
+              ? "0 0 20px 4px rgba(251, 146, 60, 0.8)"
+              : "0 0 12px rgb(236,72,153)",
+            scale: isHovered ? 1.05 : 1,
+          }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+        />
+      </div>
     </div>
-    <div className="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-4 overflow-hidden shadow-inner">
-      <motion.div
-        className="h-4 rounded-full bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600 shadow-[0_0_8px_rgb(236,72,153)]"
-        style={{ width: `${skill.level}%` }}
-        initial={{ width: 0 }}
-        whileInView={{ width: `${skill.level}%` }}
-        transition={{ duration: 1.2, ease: "easeInOut" }}
-        viewport={{ once: true }}
-      />
-    </div>
-  </div>
-);
+  );
+};
 
 const Skills = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
   return (
     <section
       id="skills"
-      className="max-w-7xl mx-auto px-6 py-24 bg-gradient-to-br from-[#fff5f7] to-[#ffe3ec] dark:from-gray-900 dark:to-gray-800 rounded-3xl shadow-2xl"
+      className="max-w-7xl mx-auto px-6 py-24 bg-gray-900 rounded-2xl shadow-lg transition-colors duration-300"
     >
       <motion.h2
-        className="text-5xl font-extrabold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-orange-400 to-yellow-400 drop-shadow-lg"
+        className="text-4xl sm:text-5xl font-extrabold text-center mb-16 text-orange-400 drop-shadow-lg"
         initial={{ opacity: 0, y: -40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
@@ -94,17 +103,25 @@ const Skills = () => {
         {Object.entries(skillsData).map(([category, skills], i) => (
           <motion.div
             key={category}
-            className="bg-white/70 dark:bg-gray-900/60 backdrop-blur-md rounded-2xl p-8 shadow-xl hover:scale-[1.05] hover:shadow-[0_10px_30px_rgba(255,111,97,0.5)] transition-transform duration-300 cursor-default"
+            className="bg-gray-800 rounded-2xl p-8 shadow-md cursor-default"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: i * 0.25 }}
             viewport={{ once: true }}
+            onMouseEnter={() => setHoveredIndex(i)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            // Added smooth shadow + scale on hover
+            whileHover={{ scale: 1.05, boxShadow: "0 0 25px 5px rgba(251, 146, 60, 0.6)" }}
           >
-            <h3 className="text-2xl font-semibold mb-8 text-gray-900 dark:text-gray-100 border-b border-pink-300 pb-3 drop-shadow-sm">
+            <h3 className="text-2xl font-semibold mb-8 text-orange-400 border-b border-orange-500 pb-3 drop-shadow-sm">
               {category}
             </h3>
             {skills.map((skill) => (
-              <SkillBar key={skill.name} skill={skill} />
+              <SkillBar
+                key={skill.name}
+                skill={skill}
+                isHovered={hoveredIndex === i}
+              />
             ))}
           </motion.div>
         ))}
