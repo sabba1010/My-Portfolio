@@ -1,25 +1,8 @@
 import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaFacebook, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const MotionLink = motion(Link);
-
-const navItemVariants = {
-  hover: {
-    scale: 1.1,
-    color: "#fb923c",
-    transition: { duration: 0.3, ease: "easeInOut" },
-  },
-};
-
-const socialIconVariants = {
-  hover: {
-    scale: 1.2,
-    color: "#fb923c",
-    transition: { duration: 0.3 },
-  },
-  tap: { scale: 0.9 },
-};
 
 const Navbar = () => {
   return (

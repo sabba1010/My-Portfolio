@@ -48,7 +48,7 @@ const About = () => {
             transition={{ duration: 0.5 }}
             className="inline-block px-4 py-1.5 rounded-full glass-effect text-sm font-semibold text-primary mb-6"
           >
-            Available for new opportunities
+            Full-Stack Engineer (MERN Stack)
           </motion.div>
 
           <motion.h1
@@ -65,7 +65,7 @@ const About = () => {
             custom={2}
             variants={staggerText}
           >
-            I’m <span className="text-white font-bold">Sabba Hossain</span>, a Junior Web Developer specializing in building high-performance, visually stunning web applications.
+            I’m <span className="text-white font-bold">Sabba Hossain</span>, a Full-Stack Developer specializing in building scalable, high-performance web applications using the MERN stack. I focus on clean architecture, seamless user experience, and production-ready solutions.
           </motion.p>
 
           <div className="space-y-6 text-white/60 text-lg leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0">
