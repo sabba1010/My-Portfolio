@@ -64,7 +64,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 section-title">
             Featured <span className="text-gradient">Projects</span>
           </h2>
           <p className="text-white/60 max-w-2xl mx-auto text-lg">

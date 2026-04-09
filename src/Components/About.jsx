@@ -1,122 +1,64 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import Spline from "@splinetool/react-spline";
-import Resume from "../assets/Resume (1).pdf";
-
-const HeroScene = lazy(() => import("./HeroScene"));
-
-// Animation variants
-const fadeLeft = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
-};
-
-const fadeRight = {
-  hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
-};
-
-const staggerText = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i = 1) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.6 },
-  }),
-};
+import profileImg from "../assets/sabba.png";
 
 const About = () => {
   return (
-    <section
-      id="about"
-      className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 overflow-hidden bg-mesh"
-    >
-      <Suspense fallback={null}>
-        <HeroScene />
-      </Suspense>
-
-      <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-16 items-center relative z-10">
-        <motion.div
-          variants={fadeLeft}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-center lg:text-left"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-effect text-sm font-bold text-primary mb-8"
+    <section id="about" className="py-24 px-6 relative overflow-hidden bg-neutral">
+      <div className="max-w-7xl w-full mx-auto relative z-10">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+           <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative order-2 lg:order-1"
           >
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            Full-Stack Engineer (MERN Stack)
+            <div className="relative z-10 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl aspect-[4/5] md:aspect-square lg:aspect-[4/5] group">
+              <img 
+                src={profileImg} 
+                alt="Sabba Hossain" 
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+                onError={(e) => {
+                   e.target.src = "https://i.ibb.co/C5fTMZnf/SH.png"
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral to-transparent opacity-60" />
+            </div>
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl -z-10" />
+            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10" />
           </motion.div>
 
-          <motion.h1
-            className="text-6xl md:text-8xl font-black text-white mb-6 leading-[1] tracking-tighter"
-            custom={1}
-            variants={staggerText}
-          >
-            Engineering the <br />
-            <span className="text-gradient">Future.</span>
-          </motion.h1>
-
-          <motion.p
-            className="text-xl md:text-2xl text-white/70 font-medium mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
-            custom={2}
-            variants={staggerText}
-          >
-            I’m <span className="text-white font-bold underline decoration-primary/50 underline-offset-4">Sabba Hossain</span>. I build high-performance, scalable web ecosystems using the MERN stack. I focus on clean architecture and production-ready solutions.
-          </motion.p>
-
-          <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="order-1 lg:order-2"
           >
-            <motion.a
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              href={Resume}
-              download
-              className="bg-primary text-white py-4 px-10 rounded-2xl font-bold shadow-[0_0_30px_-5px_var(--color-primary)] transition-all duration-300 hover:shadow-[0_0_50px_-5px_var(--color-primary)]"
-            >
-              Get Resume
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              href="#projects"
-              className="glass-effect text-white py-4 px-10 rounded-2xl font-bold transition-all duration-300 hover:bg-white/10"
-            >
-              Case Studies
-            </motion.a>
-          </div>
-        </motion.div>
-
-        <motion.div
-          variants={fadeRight}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="flex justify-center lg:justify-end h-[500px] md:h-[600px] relative"
-        >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] relative">
-               <Suspense fallback={<div className="w-full h-full flex items-center justify-center text-white/20">Loading 3D Robot...</div>}>
-                <Spline 
-                  scene="https://prod.spline.design/EEwxOg0LQF9t5pJh/scene.splinecode" 
-                  className="w-full h-full"
-                />
-              </Suspense>
+            <h2 className="text-4xl md:text-5xl font-black mb-8 section-title">
+              Behind the <span className="text-gradient">Code.</span>
+            </h2>
+            <div className="space-y-6 text-white/70 text-lg leading-relaxed">
+              <p>
+                As a developer, I believe that building for the web is an art form. My journey is rooted in a passion for creating seamless, high-performance digital ecosystems that solve real-world problems.
+              </p>
+              <p>
+                I specialize in the <span className="text-white font-bold">MERN Stack</span>, focusing on clean architecture and production-ready solutions. Whether it's a multi-vendor marketplace like <span className="text-primary font-bold">Project AcctEmpire</span> or a real-time messaging platform, I bring a commitment to excellence and user-centric design to every project.
+              </p>
+              <div className="pt-6 grid grid-cols-2 gap-8 border-t border-white/10 mt-10">
+                <div>
+                  <h4 className="text-white font-black text-xl mb-2 font-display">Location</h4>
+                  <p className="text-secondary font-bold text-sm">Dhaka, Bangladesh</p>
+                </div>
+                <div>
+                  <h4 className="text-white font-black text-xl mb-2 font-display">Education</h4>
+                  <p className="text-secondary font-bold text-sm">Diploma in CST</p>
+                </div>
+              </div>
             </div>
-          </div>
-          
-          {/* Subtle glow behind the robot */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/20 rounded-full blur-[100px] -z-10" />
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

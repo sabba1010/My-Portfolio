@@ -32,7 +32,7 @@ const Education = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 section-title">
             Educational <span className="text-gradient">Journey</span>
           </h2>
         </motion.div>

@@ -93,7 +93,7 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 section-title">
             Technical <span className="text-gradient">Proficiency</span>
           </h2>
           <p className="text-white/60 max-w-2xl mx-auto text-lg">
@@ -101,34 +101,38 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {Object.entries(skillsData).map(([category, skills], i) => (
-            <motion.div
-              key={category}
-              className="glass-card rounded-[2rem] p-8 relative group hover:border-primary/20 transition-all duration-500"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              viewport={{ once: true }}
-              onMouseEnter={() => setHoveredIndex(i)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-1.5 h-6 bg-gradient-to-b from-primary to-secondary rounded-full" />
-                <h3 className="text-2xl font-bold text-white tracking-tight">{category}</h3>
-              </div>
-              
-              <div className="space-y-6">
-                {skills.map((skill) => (
-                  <SkillBar
-                    key={skill.name}
-                    skill={skill}
-                    isHovered={hoveredIndex === i}
-                  />
-                ))}
-              </div>
-            </motion.div>
-          ))}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {Object.entries(skillsData).map(([category, skills], i, arr) => {
+            const isLast = i === arr.length - 1;
+            return (
+              <motion.div
+                key={category}
+                className={`glass-card rounded-[2rem] p-8 relative group hover:border-primary/20 transition-all duration-500 
+                  ${isLast ? "lg:col-start-2" : ""}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                onMouseEnter={() => setHoveredIndex(i)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-1.5 h-6 bg-gradient-to-b from-primary to-secondary rounded-full" />
+                  <h3 className="text-2xl font-bold text-white tracking-tight">{category}</h3>
+                </div>
+                
+                <div className="space-y-6">
+                  {skills.map((skill) => (
+                    <SkillBar
+                      key={skill.name}
+                      skill={skill}
+                      isHovered={hoveredIndex === i}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

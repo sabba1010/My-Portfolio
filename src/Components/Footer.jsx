@@ -27,8 +27,8 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} Sabba Hossain. All rights reserved.</p>
           <p className="flex items-center gap-2 mt-2">
             <FaEnvelope />{" "}
-            <a href="mailto:sabbahossain@gmail.com" className="hover:underline">
-              sabbahossain@gmail.com
+            <a href="mailto:sabbahossain123@gmail.com" className="hover:underline">
+              sabbahossain123@gmail.com
             </a>
           </p>
           <p className="flex items-center gap-2 mt-1">

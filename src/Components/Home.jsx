@@ -3,11 +3,13 @@ import Skills from './Skills';
 import Education from './Education';
 import Projects from './Projects';
 import Contact from "./Contact";
+import Hero from './Hero';
 import About from './About';
 
 const Home = () => {
     return (
-        <div className="space-y-24"> {/* Fixed vertical gap between sections */}
+        <div className="">
+            <Hero />
             <About />
             <Skills />
             <Education />
