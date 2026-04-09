@@ -107,7 +107,7 @@ const About = () => {
             <div className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] relative">
                <Suspense fallback={<div className="w-full h-full flex items-center justify-center text-white/20">Loading 3D Robot...</div>}>
                 <Spline 
-                  scene="https://prod.spline.design/ET7AeJeTA18DwfZU/scene.splinecode" 
+                  scene="https://prod.spline.design/EEwxOg0LQF9t5pJh/scene.splinecode" 
                   className="w-full h-full"
                 />
               </Suspense>
