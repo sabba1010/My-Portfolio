@@ -23,7 +23,7 @@ const HeroObject = () => {
         onPointerOut={() => setHovered(false)}
         scale={hovered ? 1.1 : 1}
       >
-        <torusKnotGeometry args={[1, 0.3, 128, 16]} />
+        <torusKnotGeometry args={[1, 0.3, 64, 12]} />
         <MeshDistortMaterial
           color={hovered ? "#06b6d4" : "#6366f1"}
           speed={3}
@@ -63,8 +63,9 @@ const HeroScene = () => {
   return (
     <div className="absolute inset-0 -z-10 pointer-events-none lg:pointer-events-auto">
       <Canvas
-        gl={{ antialias: true }}
+        gl={{ antialias: true, powerPreference: "high-performance" }}
         camera={{ position: [0, 0, 5], fov: 45 }}
+        dpr={[1, 1.5]}
       >
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />
@@ -73,13 +74,13 @@ const HeroScene = () => {
         <HeroObject />
         
         <Stars 
-          radius={100} 
-          depth={50} 
-          count={5000} 
-          factor={4} 
+          radius={50} 
+          depth={30} 
+          count={1500} 
+          factor={3} 
           saturation={0} 
           fade 
-          speed={1} 
+          speed={0.5} 
         />
         
         <MouseParticles />

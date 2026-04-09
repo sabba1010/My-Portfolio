@@ -46,10 +46,14 @@ const About = () => {
               <p>
                 I specialize in the <span className="text-white font-bold">MERN Stack</span>, focusing on clean architecture and production-ready solutions. Whether it's a multi-vendor marketplace like <span className="text-primary font-bold">Project AcctEmpire</span> or a real-time messaging platform, I bring a commitment to excellence and user-centric design to every project.
               </p>
-              <div className="pt-6 grid grid-cols-2 gap-8 border-t border-white/10 mt-10">
+              <div className="pt-6 grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-white/10 mt-10">
                 <div>
                   <h4 className="text-white font-black text-xl mb-2 font-display">Location</h4>
                   <p className="text-secondary font-bold text-sm">Dhaka, Bangladesh</p>
+                </div>
+                <div>
+                  <h4 className="text-white font-black text-xl mb-2 font-display">Experience</h4>
+                  <p className="text-secondary font-bold text-sm">1+ Year</p>
                 </div>
                 <div>
                   <h4 className="text-white font-black text-xl mb-2 font-display">Education</h4>

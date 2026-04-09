@@ -1,5 +1,5 @@
-import React, { Suspense, lazy } from "react";
-import { motion } from "framer-motion";
+import React, { Suspense, lazy, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Spline from "@splinetool/react-spline";
 import Resume from "../assets/Resume (1).pdf";
 
@@ -26,13 +26,17 @@ const staggerText = {
 };
 
 const Hero = () => {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { amount: 0.1 });
+
   return (
     <section
+      ref={containerRef}
       id="home"
       className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 overflow-hidden bg-mesh"
     >
       <Suspense fallback={null}>
-        <HeroScene />
+        {isInView && <HeroScene />}
       </Suspense>
 
       <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-16 items-center relative z-10">
@@ -101,10 +105,12 @@ const Hero = () => {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] relative">
                <Suspense fallback={<div className="w-full h-full flex items-center justify-center text-white/20 font-display">Loading 3D Robot...</div>}>
-                <Spline 
-                  scene="https://prod.spline.design/EEwxOg0LQF9t5pJh/scene.splinecode" 
-                  className="w-full h-full"
-                />
+                {isInView && (
+                  <Spline 
+                    scene="https://prod.spline.design/EEwxOg0LQF9t5pJh/scene.splinecode" 
+                    className="w-full h-full"
+                  />
+                )}
               </Suspense>
             </div>
           </div>

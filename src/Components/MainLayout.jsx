@@ -130,16 +130,16 @@ const MainLayout = () => {
             {/* Edge Glow Gradients (Matching Screenshot Aesthetic) */}
             <div className="fixed inset-0 pointer-events-none z-[100] overflow-hidden">
                 {/* Top Left Glow */}
-                <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/15 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '8s' }} />
+                <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[80px] animate-pulse will-change-transform translate-z-0" style={{ animationDuration: '10s' }} />
                 {/* Top Right Glow */}
-                <div className="absolute -top-[10%] -right-[10%] w-[40%] h-[40%] bg-secondary/15 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '10s' }} />
+                <div className="absolute -top-[10%] -right-[10%] w-[40%] h-[40%] bg-secondary/10 rounded-full blur-[80px] animate-pulse will-change-transform translate-z-0" style={{ animationDuration: '12s' }} />
                 {/* Bottom Left Glow */}
-                <div className="absolute -bottom-[10%] -left-[10%] w-[40%] h-[40%] bg-secondary/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '12s' }} />
+                <div className="absolute -bottom-[10%] -left-[10%] w-[40%] h-[40%] bg-secondary/5 rounded-full blur-[80px] animate-pulse will-change-transform translate-z-0" style={{ animationDuration: '14s' }} />
                 {/* Bottom Right Glow */}
-                <div className="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '14s' }} />
+                <div className="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[80px] animate-pulse will-change-transform translate-z-0" style={{ animationDuration: '16s' }} />
                 
                 {/* Side Vignette Effect */}
-                <div className="absolute inset-0 shadow-[inset_0_0_150px_rgba(3,7,18,0.8)]" />
+                <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(3,7,18,0.7)]" />
             </div>
 
             {/* Spotlight Glow Background */}
