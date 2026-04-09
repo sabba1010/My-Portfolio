@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import {
   FaReact,
   FaHtml5,
@@ -7,48 +6,46 @@ import {
   FaGithub,
   FaFigma,
   FaCode,
+  FaServer,
+  FaLock,
+  FaGlobe,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiExpress,
   SiMongodb,
   SiFirebase,
+  SiNextdotjs,
+  SiTypescript,
+  SiSocketdotio,
+  SiNginx,
+  SiPostman,
 } from "react-icons/si";
 import { motion } from "framer-motion";
 
 const skillsData = {
   Frontend: [
-    { name: "React", level: 85, icon: <FaReact className="text-blue-400" /> },
-    { name: "JavaScript", level: 80, icon: <FaJs className="text-yellow-400" /> },
-    { name: "HTML", level: 90, icon: <FaHtml5 className="text-orange-500" /> },
-    {
-      name: "CSS / TailwindCSS",
-      level: 85,
-      icon: <SiTailwindcss className="text-teal-400" />,
-    },
+    { name: "React / Next.js", level: 90, icon: <SiNextdotjs className="text-white" /> },
+    { name: "TypeScript", level: 85, icon: <SiTypescript className="text-blue-500" /> },
+    { name: "Tailwind CSS", level: 95, icon: <SiTailwindcss className="text-teal-400" /> },
+    { name: "Responsive Design", level: 90, icon: <FaGlobe className="text-green-400" /> },
+    { name: "API Integration", level: 85, icon: <SiPostman className="text-orange-500" /> },
   ],
   Backend: [
-    { name: "Node.js", level: 70, icon: <FaNodeJs className="text-green-500" /> },
-    { name: "Express", level: 65, icon: <SiExpress className="text-gray-400" /> },
-    { name: "MongoDB", level: 60, icon: <SiMongodb className="text-green-600" /> },
+    { name: "Node.js / Express.js", level: 85, icon: <FaNodeJs className="text-green-500" /> },
+    { name: "MongoDB / REST APIs", level: 80, icon: <SiMongodb className="text-green-600" /> },
+    { name: "JWT Auth / RBAC", level: 85, icon: <FaLock className="text-yellow-500" /> },
+    { name: "Socket.io", level: 75, icon: <SiSocketdotio className="text-white" /> },
+  ],
+  "DevOps & Security": [
+    { name: "VPS / Nginx / PM2", level: 75, icon: <SiNginx className="text-green-400" /> },
+    { name: "Bcrypt & API Security", level: 80, icon: <FaLock className="text-red-400" /> },
   ],
   Tools: [
-    {
-      name: "Git & GitHub",
-      level: 75,
-      icon: <FaGithub className="text-gray-200" />,
-    },
-    {
-      name: "VS Code",
-      level: 80,
-      icon: <FaCode className="text-blue-600" />,
-    },
-    { name: "Figma", level: 50, icon: <FaFigma className="text-pink-500" /> },
-    {
-      name: "Authentication (Firebase)",
-      level: 70,
-      icon: <SiFirebase className="text-yellow-400" />,
-    },
+    { name: "Git & GitHub", level: 85, icon: <FaGithub className="text-gray-200" /> },
+    { name: "Postman", level: 90, icon: <SiPostman className="text-orange-500" /> },
+    { name: "Figma", level: 70, icon: <FaFigma className="text-pink-500" /> },
+    { name: "VS Code", level: 90, icon: <FaCode className="text-blue-600" /> },
   ],
 };
 
@@ -85,46 +82,53 @@ const Skills = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <section
-      id="skills"
-      className="max-w-7xl mx-auto px-6 py-24 bg-gray-900 rounded-2xl shadow-lg transition-colors duration-300"
-    >
-      <motion.h2
-        className="text-4xl sm:text-5xl font-extrabold text-center mb-16 text-orange-400 drop-shadow-lg"
-        initial={{ opacity: 0, y: -40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-      >
-        My Skills
-      </motion.h2>
+    <section id="skills" className="py-24 px-6 relative overflow-hidden">
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-[80px] -z-10" />
+      
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl md:text-5xl font-black mb-4">
+            Technical <span className="text-gradient">Proficiency</span>
+          </h2>
+          <p className="text-white/60 max-w-2xl mx-auto text-lg">
+            A comprehensive overview of my technical stack and the tools I use to bring digital ideas to life.
+          </p>
+        </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-12">
-        {Object.entries(skillsData).map(([category, skills], i) => (
-          <motion.div
-            key={category}
-            className="bg-gray-800 rounded-2xl p-8 shadow-md cursor-default"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.25 }}
-            viewport={{ once: true }}
-            onMouseEnter={() => setHoveredIndex(i)}
-            onMouseLeave={() => setHoveredIndex(null)}
-            // Added smooth shadow + scale on hover
-            whileHover={{ scale: 1.05, boxShadow: "0 0 25px 5px rgba(251, 146, 60, 0.6)" }}
-          >
-            <h3 className="text-2xl font-semibold mb-8 text-orange-400 border-b border-orange-500 pb-3 drop-shadow-sm">
-              {category}
-            </h3>
-            {skills.map((skill) => (
-              <SkillBar
-                key={skill.name}
-                skill={skill}
-                isHovered={hoveredIndex === i}
-              />
-            ))}
-          </motion.div>
-        ))}
+        <div className="grid md:grid-cols-3 gap-8">
+          {Object.entries(skillsData).map(([category, skills], i) => (
+            <motion.div
+              key={category}
+              className="glass-card rounded-[2rem] p-8 relative group hover:border-primary/20 transition-all duration-500"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              viewport={{ once: true }}
+              onMouseEnter={() => setHoveredIndex(i)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-1.5 h-6 bg-gradient-to-b from-primary to-secondary rounded-full" />
+                <h3 className="text-2xl font-bold text-white tracking-tight">{category}</h3>
+              </div>
+              
+              <div className="space-y-6">
+                {skills.map((skill) => (
+                  <SkillBar
+                    key={skill.name}
+                    skill={skill}
+                    isHovered={hoveredIndex === i}
+                  />
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -27,102 +27,103 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative min-h-screen px-4 sm:px-6 md:px-12 lg:px-24 py-20 flex flex-col-reverse lg:flex-row items-center gap-16 transition-colors duration-300 bg-gray-900 rounded-2xl shadow-lg"
+      className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 px-6 overflow-hidden bg-mesh"
     >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black opacity-90 -z-10 rounded-2xl"></div>
+      <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[120px]" />
+      </div>
 
-      {/* Text Content */}
-      <motion.div
-        variants={fadeLeft}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="w-full lg:w-1/2 text-center lg:text-left relative z-10"
-      >
-        <motion.h1
-          className="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight"
-          custom={1}
-          variants={staggerText}
-        >
-          Hey, I'm Sabba Hossain
-        </motion.h1>
-
-        <motion.p
-          className="text-lg text-orange-400 font-semibold mb-6"
-          custom={2}
-          variants={staggerText}
-        >
-          Junior Web Developer | React & Tailwind Enthusiast
-        </motion.p>
-
-        <div className="space-y-4 text-gray-400 text-base leading-relaxed mb-6">
-          {[
-            "I’m a passionate developer who loves turning ideas into reality through code. From a basic HTML page to full-stack web apps using React, Node.js, and MongoDB — it’s been an exciting journey!",
-            "I enjoy solving problems, crafting user-friendly experiences, and exploring creative hobbies like painting and photography to fuel my design thinking.",
-            "Currently pursuing a Diploma in CST at Daffodil Polytechnic Institute — always learning, growing, and building cool things.",
-          ].map((text, i) => (
-            <motion.p key={i} custom={i + 3} variants={staggerText}>
-              {text}
-            </motion.p>
-          ))}
-        </div>
-
+      <div className="max-w-7xl w-full flex flex-col lg:flex-row items-center gap-16 relative z-10">
         <motion.div
-          className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.5 }}
+          variants={fadeLeft}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
+          className="w-full lg:w-3/5 text-center lg:text-left"
         >
-          <motion.a
-            whileHover={{ scale: 1.07 }}
-            whileTap={{ scale: 0.95 }}
-            href={Resume}
-            download
-            className="bg-orange-500 hover:bg-orange-600 text-white py-2 px-6 rounded-lg font-medium shadow transition-all duration-200"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="inline-block px-4 py-1.5 rounded-full glass-effect text-sm font-semibold text-primary mb-6"
           >
-            Download Resume
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.07 }}
-            whileTap={{ scale: 0.95 }}
-            href="#contact"
-            className="border border-orange-500 text-orange-400 hover:bg-orange-900 py-2 px-6 rounded-lg font-medium transition-all duration-200"
-          >
-            Contact Me
-          </motion.a>
-        </motion.div>
-      </motion.div>
+            Available for new opportunities
+          </motion.div>
 
-      {/* Profile Image with Animation */}
-      <motion.div
-        variants={fadeRight}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="w-full lg:w-1/2 flex justify-center relative z-10"
-      >
+          <motion.h1
+            className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tight"
+            custom={1}
+            variants={staggerText}
+          >
+            Crafting Digital <br />
+            <span className="text-gradient">Experiences.</span>
+          </motion.h1>
+
+          <motion.p
+            className="text-xl md:text-2xl text-white/80 font-medium mb-8 max-w-2xl mx-auto lg:mx-0"
+            custom={2}
+            variants={staggerText}
+          >
+            I’m <span className="text-white font-bold">Sabba Hossain</span>, a Junior Web Developer specializing in building high-performance, visually stunning web applications.
+          </motion.p>
+
+          <div className="space-y-6 text-white/60 text-lg leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0">
+            <motion.p custom={3} variants={staggerText}>
+              Currently pursuing a Diploma in CST at Daffodil Polytechnic Institute. I turn complex problems into elegant, user-centric solutions.
+            </motion.p>
+          </div>
+
+          <motion.div
+            className="flex flex-col sm:flex-row justify-center lg:justify-start gap-5"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <motion.a
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              href={Resume}
+              download
+              className="bg-white text-black py-4 px-8 rounded-2xl font-bold shadow-xl transition-all duration-300 hover:bg-primary hover:text-white"
+            >
+              Get Resume
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              href="#projects"
+              className="glass-effect text-white py-4 px-8 rounded-2xl font-bold transition-all duration-300 hover:bg-white/10"
+            >
+              View Projects
+            </motion.a>
+          </motion.div>
+        </motion.div>
+
         <motion.div
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="relative w-64 sm:w-72 md:w-80 lg:w-96 aspect-square"
+          variants={fadeRight}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="w-full lg:w-2/5 flex justify-center lg:justify-end"
         >
-          {/* Background Circles */}
-          <div className="absolute inset-0 rounded-full bg-orange-900 opacity-10 scale-125 z-0 blur-md"></div>
-          <div className="absolute inset-6 rounded-full bg-orange-800 opacity-20 scale-110 z-0 blur-sm"></div>
-          <div className="absolute inset-12 rounded-full bg-orange-700 opacity-30 z-0"></div>
-
-          {/* Profile Image */}
-          <motion.img
-            whileHover={{ scale: 1.05, rotate: 1 }}
-            transition={{ type: "spring", stiffness: 180 }}
-            src={profileImg}
-            alt="Sabba Hossain"
-            className="relative z-10 w-full h-full rounded-full object-cover shadow-2xl"
-          />
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-40 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
+            <motion.div
+              animate={{ y: [0, -20, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl"
+            >
+              <img
+                src={profileImg}
+                alt="Sabba Hossain"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </motion.div>
+          </div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };

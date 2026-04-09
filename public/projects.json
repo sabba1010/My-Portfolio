@@ -46,8 +46,48 @@
     "description": "A system for managing marathon registrations, countdown timers, and admin CRUD operations.",
     "liveLink": "https://transcendent-croquembouche-dcb042.netlify.app/",
     "clientRepo": "https://github.com/sabba1010/Marathon-Project",
-    
     "challenges": "Handling JWT securely and creating dynamic countdown timers.",
     "improvements": "Add payment integration and real-time registration analytics."
+  },
+  {
+    "id": "5",
+    "name": "AcctEmpire",
+    "image": "/projects/acctempire.png",
+    "stack": ["PHP", "Laravel", "MySQL", "VPS", "Live Chat", "Manual Rate Control"],
+    "description": "A complete multi-vendor marketplace platform focused on buying and selling digital assets and social media accounts. Features a professional admin dashboard, dedicated seller/buyer dashboards, and a secure transaction system with Naira to USD conversion.",
+    "features": [
+      "Multi-vendor marketplace architecture",
+      "Professional admin dashboard with full system control",
+      "Dedicated dashboards for sellers, buyers, and referral users",
+      "Admin-controlled dollar-based transaction system",
+      "Naira to USD conversion with manual rate control",
+      "Secure payment system integration",
+      "Custom authentication system with secure password reset",
+      "Real-time live chat functionality",
+      "Deployed on VPS infrastructure for performance and reliability"
+    ],
+    "liveLink": "https://www.acctempire.com/",
+    "challenges": "Implementing a secure multi-vendor architecture and a flexible currency conversion system.",
+    "improvements": "Integrate automated payment verification and mobile application."
+  },
+  {
+    "id": "6",
+    "name": "Amour et Sincérité",
+    "image": "/projects/amour.png",
+    "stack": ["Full-stack", "Real-time Messaging", "Matchmaking Algorithm", "Subscription System"],
+    "description": "A full-scale dating platform featuring smart matchmaking, real-time messaging, and subscription management. Built with a modern architecture to ensure scalability and a smooth user experience.",
+    "features": [
+      "User Authentication & Profile Management",
+      "Smart Match / Discover System",
+      "Real-time Messaging System",
+      "Subscription Plans & Payments",
+      "Advanced Search & Filters",
+      "Like / Match Interaction System",
+      "Secure Backend API & Database",
+      "Fully Responsive (Mobile Friendly) UI"
+    ],
+    "liveLink": "https://www.amour-et-sincerite.com/",
+    "challenges": "Developing a real-time messaging system and a performant smart matchmaking algorithm.",
+    "improvements": "Add video calling features and AI-based profile verification."
   }
 ]
