@@ -3,7 +3,7 @@
     "id": "5",
     "name": "AcctEmpire",
     "image": "/projects/acctempire.png",
-    "stack": ["React", "Next.js", "MongoDB", "MERN", "VPS", "Real-time Chat"],
+    "stack": ["React", "Next.js","VPS", "MongoDB", "MERN",  "Real-time Chat"],
     "description": "A complete multi-vendor marketplace platform focused on buying and selling digital assets and social media accounts. Features a professional admin dashboard, dedicated seller/buyer dashboards, and a secure transaction system with Naira to USD conversion.",
     "features": [
       "Multi-vendor marketplace architecture",
@@ -24,7 +24,7 @@
     "id": "6",
     "name": "Amour et Sincérité",
     "image": "/projects/amour.png",
-    "stack": ["React", "Next.js", "MongoDB", "Real-time Messaging", "Matchmaking Algorithm"],
+    "stack": ["React", "Next.js", "VPS", "MongoDB", "Real-time Messaging", "Matchmaking Algorithm"],
     "description": "A full-scale dating platform featuring smart matchmaking, real-time messaging, and subscription management. Built with a modern architecture to ensure scalability and a smooth user experience.",
     "features": [
       "User Authentication & Profile Management",
