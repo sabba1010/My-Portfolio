@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import profileImg from "../assets/sabba.png";
+import profileImg from "../assets/Sabba.png";
 
 const About = () => {
   return (
