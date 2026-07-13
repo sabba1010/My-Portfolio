@@ -1,5 +1,26 @@
 [
   {
+    "id": "10",
+    "name": "Pixelora Studio",
+    "image": "/projects/pixelora studio.png",
+    "stack": [
+      "Three.js",
+      "React",
+      "Animations",
+      "Frontend"
+    ],
+    "description": "A fully animated agency portfolio website featuring immersive 3D elements powered by Three.js and smooth scrolling interactions.",
+    "features": [
+      "Immersive 3D web experience with Three.js",
+      "Advanced scroll and spin animations",
+      "Fully animated, responsive UI",
+      "Modern agency portfolio design"
+    ],
+    "liveLink": "https://pixelora.studio/",
+    "challenges": "Optimizing 3D animations and ensuring smooth performance across various devices.",
+    "improvements": "Add more interactive 3D models and advanced WebGL shaders."
+  },
+  {
     "id": "9",
     "name": "Oh Curio App",
     "image": "/projects/ohcurio.png",
