@@ -1,5 +1,23 @@
 [
   {
+    "id": "7",
+    "name": "MyLocalPro",
+    "image": "/projects/localpro.jpg",
+    "stack": ["React", "Node.js", "Express", "MongoDB", "MERN", "Role-based Auth"],
+    "description": "A full-stack service marketplace platform connecting customers with trusted local professionals across Australia. Includes three core roles: Admin, Service Providers, and Users.",
+    "features": [
+      "Role-based Authentication (Admin, Provider, User)",
+      "Service and Category Management",
+      "Provider Business Profiles and Listings",
+      "User Dashboards and Service Search",
+      "Direct Customer-Professional Connection",
+      "Fully Responsive Design for all devices"
+    ],
+    "liveLink": "https://mylocalpro.com.au/",
+    "challenges": "Managing three distinct user roles with varying permissions and ensuring a seamless experience across all device types.",
+    "improvements": "Implement real-time notifications for inquiries and integrated payment processing."
+  },
+  {
     "id": "5",
     "name": "AcctEmpire",
     "image": "/projects/acctempire.png",
