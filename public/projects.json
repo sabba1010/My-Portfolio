@@ -1,5 +1,26 @@
 [
   {
+    "id": "9",
+    "name": "Oh Curio App",
+    "image": "/projects/ohcurio.png",
+    "stack": [
+      "React",
+      "SMTP Integration",
+      "Frontend",
+      "Responsive UI"
+    ],
+    "description": "A frontend-based library shop application. Features a unique mobile UI design where an embedded website runs inside the homepage hero section, along with a custom SMTP setup for email communication.",
+    "features": [
+      "Library shop interface",
+      "Innovative mobile UI with an embedded website in the hero section",
+      "SMTP integration for sending and receiving emails",
+      "Frontend-focused architecture"
+    ],
+    "liveLink": "https://www.ohcurioapp.com/",
+    "challenges": "Designing an embedded, interactive website experience specifically optimized for the mobile hero section.",
+    "improvements": "Expand backend functionalities and enhance e-commerce features."
+  },
+  {
     "id": "8",
     "name": "Learning Management System (LMS)",
     "image": "/projects/lms.png",
