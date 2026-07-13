@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const containerVariants = {
   hidden: {},
@@ -20,6 +20,7 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [filter, setFilter] = useState("all");
 
   useEffect(() => {
     fetch("/projects.json")
@@ -73,18 +74,43 @@ const Projects = () => {
         </motion.div>
 
         <motion.div
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          className="flex justify-center gap-4 mb-12 flex-wrap"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          {projects.map(({ id, name, image, stack }) => (
-            <motion.div
-              key={id}
-              className="group glass-card rounded-3xl overflow-hidden hover:border-primary/30 transition-all duration-500 shadow-xl"
-              variants={itemVariants}
+          {['all', 'client', 'practice'].map((f) => (
+            <button
+              key={f}
+              onClick={() => setFilter(f)}
+              className={`px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 ${
+                filter === f
+                  ? "bg-primary text-white shadow-[0_0_20px_rgba(99,102,241,0.5)]"
+                  : "glass-card text-white/60 hover:text-white hover:border-white/20"
+              }`}
             >
+              {f === 'all' ? 'All Projects' : f === 'client' ? 'Client Work' : 'Practice'}
+            </button>
+          ))}
+        </motion.div>
+
+        <motion.div
+          layout
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <AnimatePresence mode="popLayout">
+            {projects
+              .filter((p) => filter === "all" || p.type === filter)
+              .map(({ id, name, image, stack, type }) => (
+                <motion.div
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
+                  transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
+                  key={id}
+                  className="group glass-card rounded-3xl overflow-hidden hover:border-primary/30 transition-all duration-500 shadow-xl flex flex-col"
+                >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img
                   src={image}
@@ -121,6 +147,7 @@ const Projects = () => {
               </div>
             </motion.div>
           ))}
+          </AnimatePresence>
         </motion.div>
       </div>
     </section>

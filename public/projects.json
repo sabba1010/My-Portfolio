@@ -1,6 +1,7 @@
 [
   {
     "id": "10",
+    "type": "client",
     "name": "Pixelora Studio",
     "image": "/projects/pixelora studio.png",
     "stack": [
@@ -22,6 +23,7 @@
   },
   {
     "id": "9",
+    "type": "client",
     "name": "Oh Curio App",
     "image": "/projects/ohcurio.png",
     "stack": [
@@ -43,6 +45,7 @@
   },
   {
     "id": "8",
+    "type": "practice",
     "name": "Learning Management System (LMS)",
     "image": "/projects/lms.png",
     "stack": [
@@ -67,6 +70,7 @@
   },
   {
     "id": "7",
+    "type": "client",
     "name": "MyLocalPro",
     "image": "/projects/localpro.jpg",
     "stack": [
@@ -92,6 +96,7 @@
   },
   {
     "id": "5",
+    "type": "client",
     "name": "AcctEmpire",
     "image": "/projects/acctempire.png",
     "stack": [
@@ -120,6 +125,7 @@
   },
   {
     "id": "1",
+    "type": "practice",
     "name": "Real Ested",
     "image": "https://i.ibb.co/q35QsgGQ/Screenshot-2025-07-24-182421.png",
     "stack": [
@@ -137,6 +143,7 @@
   },
   {
     "id": "2",
+    "type": "practice",
     "name": "Event Booking Web App",
     "image": "https://i.ibb.co/rfQJgGRP/Screenshot-2025-06-28-175259.png",
     "stack": [
@@ -154,6 +161,7 @@
   },
   {
     "id": "3",
+    "type": "practice",
     "name": "Plant Care Tracker",
     "image": "https://i.ibb.co/HQbFsqj/Screenshot-2025-06-28-153926.png",
     "stack": [
@@ -172,6 +180,7 @@
   },
   {
     "id": "4",
+    "type": "practice",
     "name": "Marathon Management System",
     "image": "https://i.ibb.co/fYPr7SXv/Screenshot-2025-06-28-174732.png",
     "stack": [
