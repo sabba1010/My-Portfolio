@@ -35,7 +35,7 @@ const ProjectDetails = () => {
               <h2 className="text-4xl md:text-5xl font-black text-white mb-2">{project.name}</h2>
               <div className="flex flex-wrap gap-2">
                 {project.stack.map((tech) => (
-                  <span key={tech} className="px-3 py-1 glass-effect rounded-full text-xs font-semibold text-primary">
+                  <span key={tech} className="px-3 py-1 bg-black/80 backdrop-blur-md rounded-full text-xs font-semibold text-white border border-white/20 shadow-sm">
                     {tech}
                   </span>
                 ))}
