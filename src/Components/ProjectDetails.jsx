@@ -88,11 +88,20 @@ const ProjectDetails = () => {
                 <a href={project.liveLink} target="_blank" rel="noreferrer" className="w-full py-4 bg-white text-black text-center rounded-xl font-bold hover:bg-primary hover:text-white transition-all shadow-lg">
                   Visit Live Site
                 </a>
-                {project.clientRepo && (
+                {project.clientRepo && project.serverRepo ? (
+                  <div className="grid grid-cols-2 gap-2">
+                    <a href={project.clientRepo} target="_blank" rel="noreferrer" className="w-full py-3 text-sm glass-card text-white text-center rounded-xl font-bold hover:bg-white/10 transition-all flex items-center justify-center">
+                      Frontend Code
+                    </a>
+                    <a href={project.serverRepo} target="_blank" rel="noreferrer" className="w-full py-3 text-sm glass-card text-white text-center rounded-xl font-bold hover:bg-white/10 transition-all flex items-center justify-center">
+                      Backend Code
+                    </a>
+                  </div>
+                ) : project.clientRepo ? (
                   <a href={project.clientRepo} target="_blank" rel="noreferrer" className="w-full py-4 glass-card text-white text-center rounded-xl font-bold hover:bg-white/10 transition-all">
                     Browse Code
                   </a>
-                )}
+                ) : null}
               </div>
             </div>
           </div>
