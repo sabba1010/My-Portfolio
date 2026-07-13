@@ -7,7 +7,7 @@ const About = () => {
     <section id="about" className="py-24 px-6 relative overflow-hidden bg-neutral">
       <div className="max-w-7xl w-full mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-           <motion.div
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -15,12 +15,12 @@ const About = () => {
             className="relative order-2 lg:order-1"
           >
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl aspect-[4/5] md:aspect-square lg:aspect-[4/5] group">
-              <img 
-                src={profileImg} 
-                alt="Sabba Hossain" 
+              <img
+                src={profileImg}
+                alt="Sabba Hossain"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
                 onError={(e) => {
-                   e.target.src = "https://i.ibb.co/C5fTMZnf/SH.png"
+                  e.target.src = "https://i.ibb.co/C5fTMZnf/SH.png"
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-neutral to-transparent opacity-60" />
@@ -53,7 +53,7 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-black text-xl mb-2 font-display">Experience</h4>
-                  <p className="text-secondary font-bold text-sm">1+ Year</p>
+                  <p className="text-secondary font-bold text-sm">2+ Year</p>
                 </div>
                 <div>
                   <h4 className="text-white font-black text-xl mb-2 font-display">Education</h4>
