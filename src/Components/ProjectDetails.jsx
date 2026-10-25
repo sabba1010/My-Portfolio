@@ -11,7 +11,15 @@ const ProjectDetails = () => {
       .then((data) => {
         const found = data.find((p) => p.id === projectId);
         setProject(found);
-      });
+        if (found) {
+          document.title = `${found.name} | Sabba Hossain - Full Stack Developer`;
+        }
+      })
+      .catch((err) => console.error("Error loading project details:", err));
+
+    return () => {
+      document.title = "Sabba Hossain | Full Stack Developer";
+    };
   }, [projectId]);
 
   if (!project) return (

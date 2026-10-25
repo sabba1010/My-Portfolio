@@ -54,24 +54,24 @@ const Hero = () => {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-effect text-sm font-bold text-primary mb-8"
           >
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            Full-Stack Engineer (MERN Stack)
+            MERN Stack Developer • Dhaka, Bangladesh
           </motion.div>
 
           <motion.h1
-            className="text-6xl md:text-8xl font-black text-white mb-6 leading-[1] tracking-tighter section-title"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-6 leading-[1.05] tracking-tighter section-title"
             custom={1}
             variants={staggerText}
           >
-            Engineering the <br />
-            <span className="text-gradient">Future.</span>
+            Sabba Hossain <br />
+            <span className="text-gradient">Full Stack Developer</span>
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-white/70 font-medium mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+            className="text-lg md:text-xl text-white/70 font-medium mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
             custom={2}
             variants={staggerText}
           >
-            I’m <span className="text-white font-bold underline decoration-primary/50 underline-offset-4">Sabba Hossain</span>. I build high-performance, scalable web ecosystems using the MERN stack.
+            Building high-performance, scalable web ecosystems using React, Node.js, Express, and MongoDB.
           </motion.p>
 
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-6">
