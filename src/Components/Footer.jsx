@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaFacebook, FaTwitter, FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFacebook, FaEnvelope, FaPhone } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const fadeUp = {
@@ -49,31 +49,27 @@ const Footer = () => {
           {[
             {
               href: "https://github.com/sabba1010",
-              label: "GitHub",
+              label: "GitHub Profile - Sabba Hossain",
               icon: <FaGithub size={24} />,
             },
             {
               href: "https://www.linkedin.com/in/sabba1010/",
-              label: "LinkedIn",
+              label: "LinkedIn Profile - Sabba Hossain",
               icon: <FaLinkedin size={24} />,
             },
             {
               href: "https://www.facebook.com/sabba.hossain.niloy/",
-              label: "Facebook",
+              label: "Facebook Profile",
               icon: <FaFacebook size={24} />,
-            },
-            {
-              href: "https://twitter.com/your-link",
-              label: "Twitter",
-              icon: <FaTwitter size={24} />,
             },
           ].map(({ href, label, icon }) => (
             <motion.a
               key={label}
               href={href}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label={label}
+              title={label}
               className="hover:text-primary transition"
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}

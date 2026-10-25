@@ -23,6 +23,9 @@ const Projects = () => {
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
+    if (window.location.pathname.startsWith("/projects")) {
+      document.title = "Featured Projects | Sabba Hossain - Full Stack Developer";
+    }
     fetch("/projects.json")
       .then((res) => {
         if (!res.ok) throw new Error("Network response was not ok");
@@ -37,6 +40,10 @@ const Projects = () => {
         setError("Failed to load projects.");
         setLoading(false);
       });
+
+    return () => {
+      document.title = "Sabba Hossain | Full Stack Developer";
+    };
   }, []);
 
   if (loading)

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaEnvelope, FaPhone, FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const containerVariants = {
@@ -9,11 +9,6 @@ const containerVariants = {
       staggerChildren: 0.2,
     },
   },
-};
-
-const fadeDown = {
-  hidden: { opacity: 0, y: -30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
 };
 
 const fadeUpScale = {
@@ -75,7 +70,7 @@ const Contact = () => {
               key={item.label}
               href={item.href}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="glass-card p-8 rounded-[2rem] flex flex-col items-center text-center group"
               variants={fadeUpScale}
               whileHover={{ y: -5 }}
@@ -87,6 +82,36 @@ const Contact = () => {
               <p className="text-white/60 text-sm font-medium">{item.info}</p>
             </motion.a>
           ))}
+        </motion.div>
+
+        {/* Visible Social Profiles */}
+        <motion.div
+          className="mt-12 flex flex-wrap justify-center gap-4 items-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+        >
+          <a
+            href="https://www.linkedin.com/in/sabba1010/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn Profile - Sabba Hossain"
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl glass-card text-white hover:text-primary hover:border-primary/40 transition-all font-medium text-sm group"
+          >
+            <FaLinkedin className="text-xl text-[#0A66C2] group-hover:scale-110 transition-transform" />
+            <span>Connect on LinkedIn</span>
+          </a>
+          <a
+            href="https://github.com/sabba1010"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile - Sabba Hossain"
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl glass-card text-white hover:text-primary hover:border-primary/40 transition-all font-medium text-sm group"
+          >
+            <FaGithub className="text-xl text-white group-hover:scale-110 transition-transform" />
+            <span>Explore on GitHub</span>
+          </a>
         </motion.div>
       </div>
     </section>

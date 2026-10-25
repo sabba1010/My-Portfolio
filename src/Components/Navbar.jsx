@@ -51,7 +51,7 @@ const Navbar = () => {
         <motion.a
           href="https://github.com/sabba1010"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           aria-label="GitHub"
           className="w-9 h-9 rounded-lg flex items-center justify-center text-white/50 hover:text-white hover:bg-white/8 transition-all"
           whileHover={{ scale: 1.1 }}
@@ -62,7 +62,7 @@ const Navbar = () => {
         <motion.a
           href="https://www.linkedin.com/in/sabba1010/"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           aria-label="LinkedIn"
           className="w-9 h-9 rounded-lg flex items-center justify-center text-white/50 hover:text-white hover:bg-white/8 transition-all"
           whileHover={{ scale: 1.1 }}
@@ -98,7 +98,7 @@ const Navbar = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </label>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow-2xl glass-card rounded-2xl w-52 gap-1"
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow-2xl glass-card rounded-2xl w-56 gap-1"
             style={{ background: "rgba(3,7,18,0.95)", border: "1px solid rgba(255,255,255,0.1)" }}
           >
             {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
@@ -112,6 +112,28 @@ const Navbar = () => {
               <a href={Resume} download className="py-2 bg-primary/20 text-primary font-bold rounded-lg">
                 Download Resume
               </a>
+            </li>
+            <li className="mt-2 pt-2 border-t border-white/10">
+              <div className="flex items-center justify-around py-1">
+                <a
+                  href="https://github.com/sabba1010"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="flex items-center gap-1.5 text-white/70 hover:text-white text-xs font-semibold"
+                >
+                  <FaGithub size={16} /> GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/sabba1010/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="flex items-center gap-1.5 text-white/70 hover:text-white text-xs font-semibold"
+                >
+                  <FaLinkedin size={16} /> LinkedIn
+                </a>
+              </div>
             </li>
           </ul>
         </div>
