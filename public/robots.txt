@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sabba-hossain.vercel.app/sitemap.xml
